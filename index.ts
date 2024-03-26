@@ -12,12 +12,16 @@ import { createPrompt } from 'bun-promptx'
 
 const basicStack = new BasicClass()
 
-for (let counter = 0; counter < 3; counter++) {
-// String value
-  const string = createPrompt('Enter a string: ')
+const addArray = createPrompt('Input items into the array? (y/n): ')
+const addArrayValue = addArray.value
+if (addArrayValue == 'y') {
+  for (let counter = 0; counter < 3; counter++) {
+  // String value
+    const string = createPrompt('Enter a string: ')
 
-  const stringValue = string.value
-  basicStack.push(stringValue)
+    const stringValue = string.value
+    basicStack.push(stringValue)
+  }
 }
 
 // Look at the top element of the array
